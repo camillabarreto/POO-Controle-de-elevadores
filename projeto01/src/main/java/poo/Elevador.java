@@ -3,24 +3,25 @@ package poo;
 public class Elevador {
     private int viagens;
     private int andarAtual;
-    private Botoes botoes;
 
-    public Elevador(int andares){
+    public Elevador(){
         this.viagens = 0;
         this.andarAtual = 0;
-        this.botoes = new Botoes(andares);
     }
     public int andarAtual(){
-        return andarAtual;
+        return this.andarAtual;
     }
+
     public int viagens(){
-        return viagens;
+        return this.viagens;
     }
-    public boolean viajar(int andar){
-        return false;
+
+    public void viajar(int andarDestino){
+        this.andarAtual = andarDestino;
+        this.viagens++;
     }
+
     public String estatisticas(){
-        return "Quantidade de viagens: " + viagens +
-                "Andar atual: " + andarAtual;
+        return "Viagens: " + this.viagens + " - Andar atual: " + this.andarAtual;
     }
 }
